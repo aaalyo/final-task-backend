@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+    api:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - .:/usr/src/app
+        ports: 
+            - 8070:8070
+        working_dir: /usr/src/app
+        links:
+            - mongodb
+        
+    mongodb:
+        image: mongo
+        volumes:
+                - mongodb:/data/db
+        ports:
+                - 27017:27017
+    
+volumes:
+    mongodb:
+

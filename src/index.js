@@ -5,6 +5,8 @@ import mongoose from 'mongoose';
 import articleRoutes from './routes/articles.js';
 import categoryRoutes from './routes/categories.js';
 import chatRoutes from './routes/messages.js';
+import usernameRoutes from './routes/password.js';
+
 import cors from 'cors';
 
 dotenv.config();
@@ -19,6 +21,8 @@ server.use(bodyParser.json());
 server.use('/articles', articleRoutes);
 server.use('/categories', categoryRoutes);
 server.use('/chat', chatRoutes);
+server.use('/username', usernameRoutes);
+
 
 mongoose.connect(process.env.MONGOOSE_CONNECTION_URL, 
     {useNewUrlParser: true, useUnifiedTopology: true},

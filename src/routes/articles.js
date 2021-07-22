@@ -19,17 +19,6 @@ router.get('/latest', async (req, res) => {
     }
 });
 
-router.get('/category', async (req, res) => {
-    const { categoryId } = req.params;
-    try {
-        const query = Article.find({}).sort({createdAt:'desc'});
-        const articles = await query.exec()
-        res.json(articles);
-    } catch (e) {
-        res.json({ error: true, message: e })
-    }
-});
-
 router.get('/category/:categoryId', async (req, res) => {
     const { categoryId } = req.params;
     try {

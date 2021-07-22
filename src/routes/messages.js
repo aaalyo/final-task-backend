@@ -3,10 +3,6 @@ import Message from '../models/Message.js'
 
 const router = express.Router();
 
-// GET /messages - returns list of all the messages
-// POST /messages - create a new article. {"name": "string", "text": "string", "isAnswer": false }
-
-
 router.get('/', async (req, res) => {
     try {
         const query = Message.find({});

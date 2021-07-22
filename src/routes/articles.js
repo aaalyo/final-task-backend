@@ -3,12 +3,6 @@ import Article from '../models/Article.js'
 
 const router = express.Router();
 
-// GET /articles - returns list of all the articles
-// GET /articles/{id} - article
-// POST /articles - create a new article. {"title": "string", "text": "string", "category": [123, 321]}
-// PUT /articles/{id} - update the article {"title": "string", "text": "string", "category": [123, 321]}
-// DELETE /articles/{id} - deletes an article
-
 router.get('/latest', async (req, res) => {
     try {
         const query = Article.find({}).sort({createdAt:'desc'}).limit(3);

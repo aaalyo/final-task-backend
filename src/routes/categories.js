@@ -39,37 +39,4 @@ router.post('/', async (req, res) => {
     }
 });
 
-// router.put('/:id', async (req, res) => {
-//     const { id } = req.params;
-//     try {
-//         const query = Category.findById(id);
-//         const category = await query.exec();
-//         if (!category) {
-//             res.status(404).json({notFound: true});
-//             return;
-//         }
-//         // updates the ojbect proerties
-//         category.title = req.body.title;    
-//         await category.save(); // triggers the save in the database
-//         res.json(category);
-//     } catch(e) {
-//         res.json({error: true, message: e});
-//     }
-// });
-
-// router.delete('/:id', async (req, res) => {
-//     const { id } = req.params;
-
-//     try {
-//         const query = Category.deleteOne({
-//             _id: id
-//         });
-//         await query.exec();
-        
-//         res.json({success: true});
-//     } catch(e) {
-//         res.json({error: true, message: e});
-//     }
-// });
-
 export default router;
